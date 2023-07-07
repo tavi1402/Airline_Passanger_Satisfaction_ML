@@ -33,6 +33,29 @@ class DataIngestion:
             path=os.path.join(os.getcwd(),"notebook\\data\\train.csv")
 
             df=pd.read_csv(path)
+            df.rename(columns = {'Gender':'gender',
+                        'Customer Type':'customer_type',
+                        'Age':'age',
+                        'Type of Travel':'type_of_travel',
+                        'Flight Distance':'flight_distance',
+                        'Departure/Arrival time convenient':'departure_arrival_time_convenient',
+                        'Inflight wifi service':'inflight_wifi_service',
+                        'Ease of Online booking':'ease_of_online_booking',
+                        'Gate location':'gate_location',
+                        'Food and drink':'food_and_drink',
+                        'Online boarding':'online_boarding',
+                        'Seat comfort':'seat_comfort',
+                        'Inflight entertainment':'inflight_entertainment',
+                        'On-board service':'on_board_service',
+                        'Leg room service':'leg_room_service',
+                        'Baggage handling':'baggage_handling',
+                        'Checkin service':'checkin_service',
+                        'Inflight service':'inflight_service',
+                        'Cleanliness':'cleanliness',
+                        'Departure Delay in Minutes':'departure_delay_in_minutes',
+                        'Arrival Delay in Minutes':'arrival_delay_in_minutes',
+                        'satisfaction':'satisfaction'},inplace=True,)
+            
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)

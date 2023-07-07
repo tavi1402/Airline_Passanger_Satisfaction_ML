@@ -28,17 +28,18 @@ class DataTransformation:
         
         '''
         try:
-            numerical_columns =['Age', 'Flight Distance', 'Inflight wifi service', 
-                                'Departure/Arrival time convenient',
-                                'Ease of Online booking', 'Gate location',
-                                'Food and drink', 'Online boarding', 
-                                'Seat comfort', 'Inflight entertainment', 
-                                'On-board service', 'Leg room service', 
-                                'Baggage handling', 'Checkin service',
-                                'Inflight service', 'Cleanliness', 
-                                'Departure Delay in Minutes', 
-                                'Arrival Delay in Minutes']
-            categorical_columns =['Gender', 'Customer Type', 'Type of Travel', 'Class']
+            numerical_columns =['age','flight_distance', 'inflight_wifi_service',
+                                'departure_arrival_time_convenient', 
+                                'ease_of_online_booking','gate_location',
+                                'food_and_drink','online_boarding', 
+                                'seat_comfort','inflight_entertainment', 
+                                'on_board_service', 'leg_room_service',
+                                'baggage_handling', 'checkin_service', 
+                                'inflight_service','cleanliness',
+                                'departure_delay_in_minutes',
+                                'arrival_delay_in_minutes',
+                                    ]
+            categorical_columns =['gender', 'customer_type', 'type_of_travel', 'Class']
 
             num_pipeline= Pipeline(
                 steps=[
@@ -90,16 +91,18 @@ class DataTransformation:
                 preprocessing_obj=self.get_data_transformer_object()
                 
                 target_column_name='satisfaction'
-                numerical_columns =['Age', 'Flight Distance', 'Inflight wifi service', 
-                                'Departure/Arrival time convenient',
-                                'Ease of Online booking', 'Gate location',
-                                'Food and drink', 'Online boarding', 
-                                'Seat comfort', 'Inflight entertainment', 
-                                'On-board service', 'Leg room service', 
-                                'Baggage handling', 'Checkin service',
-                                'Inflight service', 'Cleanliness', 
-                                'Departure Delay in Minutes', 
-                                'Arrival Delay in Minutes']
+                numerical_columns =['age','flight_distance', 'inflight_wifi_service',
+                                    'departure_arrival_time_convenient', 
+                                    'ease_of_online_booking','gate_location',
+                                     'food_and_drink','online_boarding', 
+                                     'seat_comfort','inflight_entertainment', 
+                                     'on_board_service', 'leg_room_service',
+                                    'baggage_handling', 'checkin_service', 
+                                    'inflight_service','cleanliness',
+                                    'departure_delay_in_minutes',
+                                    'arrival_delay_in_minutes',
+                                    ]
+                                    
                 
                 train_df['satisfaction'] = train_df['satisfaction'].map({'neutral or dissatisfied':0 , 'satisfied':1})
                 test_df['satisfaction'] = test_df['satisfaction'].map({'neutral or dissatisfied':0 , 'satisfied':1})
