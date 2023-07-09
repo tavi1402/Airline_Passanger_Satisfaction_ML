@@ -4,65 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333333;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333333;
-        }
-
-        select,
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    
     <title>Airline Passenger Satisfaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
 </head>
 <body>
     <div class="container">
         <h1>Airline Passenger Satisfaction Prediction</h1>
-        <form action="/process_form" method="POST">
+        <form action="/predictdata" method="POST">
             <label for="gender">Gender:</label>
             <select id="gender" name="gender">
                 <option value="Male">Male</option>
@@ -96,142 +46,142 @@
 
             <label for="inflight_wifi_service">Inflight Wifi Service:</label>
             <select id="inflight_wifi_service" name="inflight_wifi_service">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="departure_arrival_time_convenient">Departure/Arrival Time Convenient:</label>
             <select id="departure_arrival_time_convenient" name="departure_arrival_time_convenient">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="ease_of_online_booking">Ease of Online Booking:</label>
             <select id="ease_of_online_booking" name="ease_of_online_booking">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
            
             <label for="gate_location"> Gate Location:</label>
             <select id="gate_location" name="gate_location">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>s
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="food_and_drink">Food and Drink:</label>
             <select id="food_and_drink" name="food_and_drink">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="online_boarding">Online Boarding:</label>
             <select id="online_boarding" name="online_boarding">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="seat_comfort">Seat Comfort:</label>
             <select id="seat_comfort" name="seat_comfort">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="inflight_entertainment">Inflight Entertainment:</label>
             <select id="inflight_entertainment" name="inflight_entertainment">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="on_board_service">On-board Service:</label>
             <select id="on_board_service" name="on_board_service">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="leg_room_service">Leg Room Service:</label>
             <select id="leg_room_service" name="leg_room_service">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="baggage_handling">Baggage Handling:</label>
             <select id="baggage_handling" name="baggage_handling">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="checkin_service">Check-in Service:</label>
             <select id="checkin_service" name="checkin_service">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="inflight_service">Inflight Service:</label>
             <select id="inflight_service" name="inflight_service">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="cleanliness">Cleanliness:</label>
             <select id="cleanliness" name="cleanliness">
-                <option value="3">0</option>
-                <option value="2">1</option>
-                <option value="4">2</option>
-                <option value="1">3</option>
-                <option value="5">4</option>
-                <option value="0">5</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
 
             <label for="departure_delay_in_minutes">Departure Delay In minutes:</label>
