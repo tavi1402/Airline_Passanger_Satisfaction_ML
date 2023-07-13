@@ -51,10 +51,13 @@ def predict_datapoint():
         predict_pipeline=PredictPipeline()
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
-        print("after Prediction")
-        return render_template('home.html',results=results[0])
+    res=int(results[0])
+    if res==1:
+            return render_template('home.html',results="satisfied")
+    elif res==0:
+            return render_template('home.html',results="not satisfied")
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0",debug=True)        
+    app.run(host="0.0.0.0",port=8000,debug=True)        
 
