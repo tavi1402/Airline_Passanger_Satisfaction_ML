@@ -21,3 +21,7 @@
 
 ![Screenshot 2023-07-14 130748](https://github.com/tavi1402/Airline_Passanger_Satisfaction_ML/assets/100408675/afeaf9ae-fb65-45ca-b5bb-721013285ea2)
 
+![Screenshot 2023-07-14 130821](https://github.com/tavi1402/Airline_Passanger_Satisfaction_ML/assets/100408675/ef6ef0f1-cd3c-45b5-a59a-247eef40928e)
+
+
+
